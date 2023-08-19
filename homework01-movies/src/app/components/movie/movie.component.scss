@@ -1,0 +1,30 @@
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+h3 {
+  margin: 20px;
+}
+
+.movie-details {
+  border: 2px solid #2d3436;
+  padding: 15px;
+  width: 450px;
+  margin: 10px;
+  background-color: #c7dce5;
+  border-radius: 4px;
+}
+
+.hide {
+  display: none;
+}
+
+.cast-container {
+  > h4 {
+    cursor: pointer;
+  }
+  > h4:hover {
+    color: darkgray;
+  }
+}

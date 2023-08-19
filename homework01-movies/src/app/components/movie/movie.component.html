@@ -1,0 +1,20 @@
+<div class="movie-container">
+  <div class="movie-details">
+    <h3>{{ movie.title }}</h3>
+    <p>Release date: {{ movie.releseDate | date : "mediumDate" }}</p>
+    <p>Producer: {{ movie.producerName }}</p>
+    <p>Genre: {{ movie.genre }}</p>
+    <p>Raiting: {{ movie.raiting }} of 5</p>
+    <div class="cast-container" appToggleCast>
+      <h4>Cast: ⬇️</h4>
+      <div class="cast-details hide">
+        <p>Leading Role: {{ movie.cast.leadingActor }}</p>
+        <p>Supporting Role: {{ movie.cast.supportingActor }}</p>
+        <p>Supporting Role: {{ movie.cast.secondSupportingActor }}</p>
+        <p>Director: {{ movie.cast.director }}</p>
+        <p>Screen Writer: {{ movie.cast.screenWriter }}</p>
+      </div>
+    </div>
+    <button class="button" (click)="onBtnClick()">Show Movie</button>
+  </div>
+</div>

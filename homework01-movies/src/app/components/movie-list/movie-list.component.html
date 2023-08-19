@@ -1,0 +1,38 @@
+<div class="movieList-container">
+  <div class="movie-heading">
+    <h2>{{ movieListTitle }}</h2>
+    <h3>{{ movieTitle }}</h3>
+  </div>
+</div>
+<div class="movieFromChild" *ngIf="isMovieShown" [ngClass]="isMovieClicked">
+  <h3>{{ selectedMovie.title }}</h3>
+  <p>Release date: {{ selectedMovie.releseDate | date : "mediumDate" }}</p>
+  <p>Producer: {{ selectedMovie.producerName }}</p>
+  <p>Genre: {{ selectedMovie.genre }}</p>
+  <p>Raiting: {{ selectedMovie.raiting }} of 5</p>
+  <div class="cast-container">
+    <h4>Cast: ⬇️</h4>
+    <div class="cast-details">
+      <p>Leading Role: {{ selectedMovie.cast.leadingActor }}</p>
+      <p>Supporting Role: {{ selectedMovie.cast.supportingActor }}</p>
+      <p>Supporting Role: {{ selectedMovie.cast.secondSupportingActor }}</p>
+      <p>Director: {{ selectedMovie.cast.director }}</p>
+      <p>Screen Writer: {{ selectedMovie.cast.screenWriter }}</p>
+    </div>
+  </div>
+  <button
+    class="button"
+    (click)="onMovieClose()"
+    [ngStyle]="{ marginLeft: 'auto', marginRight: 'auto', width: '100px' }"
+  >
+    Close
+  </button>
+</div>
+<div class="movies-container">
+  <app-movie
+    *ngFor="let movie of movies"
+    [movie]="movie"
+    [movieTitle]="movieTitle"
+    (moviesOutput)="onMovieSelect($event)"
+  ></app-movie>
+</div>
