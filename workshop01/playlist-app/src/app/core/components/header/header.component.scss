@@ -1,0 +1,34 @@
+.header {
+  background-color: #124c06;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  border-bottom: 4px solid black;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+    a {
+      color: #f5f1e3;
+      font-size: 30px;
+      padding: 0 15px;
+      text-decoration: none;
+      box-shadow: 2px 2px 0px #000000;
+      border: 3px solid #000000;
+    }
+    a:hover {
+      background-color: #199800;
+    }
+    .active {
+      background-color: #199800;
+      padding: 5px 20px;
+      color: aliceblue;
+    }
+  }
+}

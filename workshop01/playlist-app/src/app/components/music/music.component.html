@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <section class="container">
+    <div class="songs-list">
+      <h2>List of popular songs</h2>
+      <ul>
+        <li *ngFor="let song of songs" (click)="onSongClick(song)">
+          <p>{{ song.title }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="container" *ngIf="!!selectedSong">
+    <div class="song-details">
+      <h2>Song Details</h2>
+      <ul>
+        <li>
+          <h4>Title: {{ selectedSong.title }}</h4>
+        </li>
+        <li>
+          <p>Artist: {{ selectedSong.artist }}</p>
+        </li>
+        <li>
+          <p>Album: {{ selectedSong.album }}</p>
+        </li>
+        <li>
+          <p>Song Writer: {{ selectedSong.songWriter }}</p>
+        </li>
+        <li>
+          <p>Genre: {{ selectedSong.genre }}</p>
+        </li>
+        <li>
+          <p>{{ selectedSong.year }}</p>
+        </li>
+        <li>
+          <p>Raiting: {{ selectedSong.rating }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
